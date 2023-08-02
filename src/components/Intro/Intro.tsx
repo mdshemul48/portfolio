@@ -57,32 +57,42 @@ export default function Intro() {
         <span className="underline">Node.js</span>.
       </motion.h1>
 
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium">
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
+      >
         <Link
           href="#contact"
-          className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
+          className="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-gray-950 active:scale-105 transition"
         >
-          Contact me here <BsArrowRight />{" "}
+          Contact me here{" "}
+          <BsArrowRight className="opacity-70 group-hover:translate-x-1 transition" />{" "}
         </Link>
         <a
-          href="#"
-          className="bg-white px-7 py-3 flex items-center gap-2 rounded-full"
+          href="/CV.pdf"
+          className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full  focus:scale-110 hover:scale-110  active:scale-105 transition"
+          download
         >
-          Download CV <HiDownload />
+          Download CV{" "}
+          <HiDownload className="group-hover:translate-y-1 transition opacity-60" />
         </a>
         <a
           href="#"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full"
+          target="_blank"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition border border-black/10"
         >
           <BsLinkedin />
         </a>
         <a
-          href="#"
-          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem]"
+          href="https://github.com/mdshemul48"
+          target="_blank"
+          className="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-110  active:scale-105 transition border border-black/10"
         >
           <FaGithubSquare />
         </a>
-      </div>
+      </motion.div>
     </section>
   );
 }
