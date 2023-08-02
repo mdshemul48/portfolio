@@ -4,7 +4,9 @@ import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsLinkedin } from "react-icons/bs";
+import { HiDownload } from "react-icons/hi";
+import { FaGithubSquare } from "react-icons/fa";
 
 export default function Intro() {
   return (
@@ -55,13 +57,31 @@ export default function Intro() {
         <span className="underline">Node.js</span>.
       </motion.h1>
 
-      <div>
+      <div className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium">
         <Link
           href="#contact"
           className="bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full"
         >
           Contact me here <BsArrowRight />{" "}
         </Link>
+        <a
+          href="#"
+          className="bg-white px-7 py-3 flex items-center gap-2 rounded-full"
+        >
+          Download CV <HiDownload />
+        </a>
+        <a
+          href="#"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full"
+        >
+          <BsLinkedin />
+        </a>
+        <a
+          href="#"
+          className="bg-white p-4 text-gray-700 flex items-center gap-2 rounded-full text-[1.35rem]"
+        >
+          <FaGithubSquare />
+        </a>
       </div>
     </section>
   );
