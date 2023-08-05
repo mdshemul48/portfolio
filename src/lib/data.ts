@@ -31,7 +31,7 @@ export const links = [
     name: "Contact",
     hash: "#contact",
   },
-] as const;
+];
 
 export const experiencesData = [
   {
@@ -58,7 +58,7 @@ export const experiencesData = [
     icon: React.createElement(FaReact),
     date: "2021 - present",
   },
-] as const;
+];
 
 export const projectsData = [
   {
@@ -82,7 +82,7 @@ export const projectsData = [
     tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
     imageUrl: wordanalyticsImg,
   },
-] as const;
+];
 
 export const skillsData = [
   "HTML",
@@ -104,4 +104,4 @@ export const skillsData = [
   "Python",
   "Django",
   "Framer Motion",
-] as const;
+];
