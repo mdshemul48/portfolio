@@ -2,7 +2,7 @@
 
 import Image, { StaticImageData } from "next/image";
 import React, { useRef } from "react";
-import { useScroll } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 import { motion } from "framer-motion";
 
 type ProjectPropsType = {
@@ -25,16 +25,19 @@ export default function Project({
     offset: ["0 1", "1.33 1"],
   });
 
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], [0.6, 1]);
+
   return (
     <motion.div
       style={{
-        scale: scrollYProgress,
-        opacity: scrollYProgress,
+        scale: scaleProgress,
+        opacity: opacityProgress,
       }}
       ref={ref}
-      className="mb-3 sm:mb-8 last:mb-0"
+      className="group mb-3 sm:mb-8 last:mb-0"
     >
-      <section className="group relative bg-gray-100 max-w-[45rem] border border-black/5 overflow-hidden sm:pr-8 sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 hover:bg-gray-200 transition">
+      <section className="rounded-lg group-even:pl-8 relative bg-gray-100 max-w-[45rem] border border-black/5 overflow-hidden sm:pr-8 sm:h-[20rem] mb-3 sm:mb-8 last:mb-0 hover:bg-gray-200 transition">
         <div className="pt-4 py-4 pb-8 px-5 sm:pl-10 sm:pr-2 sm:pt-10 w-1/2 flex flex-col h-full group-even:ml-[18rem]">
           <h3 className="text-2xl font-semibold">{title}</h3>
           <p className="mt-2 leading-relaxed text-gray-700">{description}</p>
