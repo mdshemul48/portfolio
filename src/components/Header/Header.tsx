@@ -1,14 +1,14 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import clsx from "clsx";
+import { useActiveSection } from "@/app/hooks/useActiveSection";
 
 export default function Header() {
-  const [actionSection, setActionSection] = useState("Home");
-
+  const { activeSection, setActiveSection } = useActiveSection();
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -31,13 +31,13 @@ export default function Header() {
                 className={clsx(
                   "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition",
                   {
-                    "text-gray-950": actionSection === link.name,
+                    "text-gray-950": activeSection === link.name,
                   }
                 )}
-                onClick={() => setActionSection(link.name)}
+                onClick={() => setActiveSection(link.name)}
               >
                 {link.name}
-                {link.name === actionSection && (
+                {link.name === activeSection && (
                   <motion.span
                     layoutId="actionSection"
                     transition={{
