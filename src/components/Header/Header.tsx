@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useContext } from "react";
+import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
