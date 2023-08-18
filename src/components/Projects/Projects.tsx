@@ -8,7 +8,7 @@ import { useSelection } from "@/hooks/useSelection";
 export default function Projects() {
   const { ref } = useSelection("Projects", 0.5);
   return (
-    <section className="scroll-mt-28" id="projects" ref={ref}>
+    <section className="scroll-mt-28 mb-28" id="projects" ref={ref}>
       <SectionHeading>My Projects</SectionHeading>
       <div>
         {projectsData.map((project, index) => (
