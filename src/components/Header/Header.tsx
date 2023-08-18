@@ -5,10 +5,11 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import clsx from "clsx";
-import { useActiveSection } from "@/app/hooks/useActiveSection";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 export default function Header() {
-  const { activeSection, setActiveSection } = useActiveSection();
+  const { activeSection, setActiveSection, setTimeOfLastClick } =
+    useActiveSection();
   return (
     <header className="z-[999] relative">
       <motion.div
@@ -34,7 +35,10 @@ export default function Header() {
                     "text-gray-950": activeSection === link.name,
                   }
                 )}
-                onClick={() => setActiveSection(link.name)}
+                onClick={() => {
+                  setActiveSection(link.name);
+                  setTimeOfLastClick(Date.now());
+                }}
               >
                 {link.name}
                 {link.name === activeSection && (

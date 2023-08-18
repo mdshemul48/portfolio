@@ -8,7 +8,7 @@ import { BsArrowRight, BsLinkedin } from "react-icons/bs";
 import { HiDownload } from "react-icons/hi";
 import { FaGithubSquare } from "react-icons/fa";
 import { useInView } from "react-intersection-observer";
-import { useActiveSection } from "@/app/hooks/useActiveSection";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 export default function Intro() {
   const { ref, inView } = useInView({

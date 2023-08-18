@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import SectionHeading from "@/components/shared/SectionHeading";
 import { projectsData } from "@/lib/data";
 import Project from "./Project";
-import { useActiveSection } from "@/app/hooks/useActiveSection";
+import { useActiveSection } from "@/hooks/useActiveSection";
 
 export default function Projects() {
   const { ref, inView } = useInView({
